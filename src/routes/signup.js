@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt')
 const Business = require('../models/business')
 const Person = require ('../models/person')
+const Menu = require('../models/menu')
 
 //   Create business and user .........................
  router.post('/', async (req, res) => {
@@ -34,8 +35,14 @@ const Person = require ('../models/person')
          if (err) return console.error(err) 
              // saved!
      });
+     // ................................creando menu adjunto al usuario ......................................................
+     let menu = new Menu(body)
+     menu.save(function (err) {
+        if (err) return console.error(err) 
+            // saved!
+    });
 
-      // creando usuario
+      // creando usuario ------------------------------------------
       let password = await bcrypt.hash(body.password, 10)
 
       let datos = new Person ({user: body.user, password: password, emailPerson: body.emailPerson, businessId: negocio._id});

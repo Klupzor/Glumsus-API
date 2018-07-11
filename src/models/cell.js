@@ -6,7 +6,7 @@
             type: String,
             required: true
         },
-        cell: {type: String, required: true},
+        cell: {type: String, required: true}, //categoria: res/bar/dis/ 
         cover: String 
 
     })

@@ -3,7 +3,7 @@ var Schema = require('mongoose').Schema;
 
 var BusinessSchema = Schema({
     name: String,
-    type: String, //res,dis,bar
+    cell: {type: String, required: true}, //res,dis,bar
     status: { type: Boolean, default: true },
     panel: String, //ciudad
     user: {         //usuario que se usa para el link del negocio
@@ -14,7 +14,9 @@ var BusinessSchema = Schema({
     email: {type: String, lowercase: true},
     phone: Number,
     services: Boolean,
-    cover: String
+    cover: String,
+    created: { type: Date, default: Date.now }
+
 })
 
 
