@@ -2,7 +2,7 @@ var db = require('../libs/db-connection')();
 var Schema = require('mongoose').Schema;
 
 var BusinessSchema = Schema({
-    name: String,
+    name: {type: String, default: "Editar nombre del negocio"},
     cell: {type: String, required: true}, //res,dis,bar
     status: { type: Boolean, default: true },
     panel: String, //ciudad
