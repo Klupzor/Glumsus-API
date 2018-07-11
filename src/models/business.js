@@ -13,7 +13,8 @@ var BusinessSchema = Schema({
     },
     email: {type: String, lowercase: true},
     phone: Number,
-    services: Boolean
+    services: Boolean,
+    cover: String
 })
 
 
