@@ -5,11 +5,11 @@ const app = express()
 const morgan = require ('morgan')
 
 const indexRoutes = require('./routes/index.js')
-const registerRoutes = require ('./routes/register.js')
 const cellRoutes = require('./routes/cell.js')
 const signupRoutes = require('./routes/signup')
 const loginRoutes = require('./routes/login')
 const userRoutes = require('./routes/user')
+const menuRoutes = require('./routes/menu')
 
 // settings 
 app.set('port', process.env.PORT || 3000)
@@ -23,11 +23,12 @@ app.use(express.urlencoded({extended: false}))
 
 //routes
 // app.use('/', indexRoutes)
-app.use('/reg', registerRoutes)
 app.use('/cell', cellRoutes)
 app.use('/signup', signupRoutes)
 app.use('/login', loginRoutes)
 app.use('/user', userRoutes)
+app.use('/menu', menuRoutes)
+
 
 
 

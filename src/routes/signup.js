@@ -35,12 +35,6 @@ const Menu = require('../models/menu')
          if (err) return console.error(err) 
              // saved!
      });
-     // ................................creando menu adjunto al usuario ......................................................
-     let menu = new Menu(body)
-     menu.save(function (err) {
-        if (err) return console.error(err) 
-            // saved!
-    });
 
       // creando usuario ------------------------------------------
       let password = await bcrypt.hash(body.password, 10)
