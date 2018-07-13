@@ -33,13 +33,13 @@ router.get('/business', (req, res)=>{
     // console.log(req)
     // res.json({datos: req.decoded})
     var user = req.decoded
-    Business.findOne({user : user}, function (err, post) {
-      if (err) return next(err);
+    Business.findOne({user : user}).populate('menus').exec(function(err, post){
+        if (err) return next(err);
       res.json({
           success: true,
           business: post
         });
-    });
+    })
 })
 
 //----------------------mostrando datos de persona-------------------------------
