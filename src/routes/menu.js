@@ -7,10 +7,34 @@ router.post('/', (req, res) => {
 
     Menu.create(body, (err, task) => {
         if (err) return console.error(err)
-        // res.json(body)
-        res.send('guardado')
+        res.json(task)
+        // res.send('guardado')
     })
 
 })
+
+router.get('/', (req, res) => {
+    Menu.find((err, tasks) => {
+        if (err) return console.error(err)
+        res.json(tasks)
+    })
+})
+
+router.get('/:user', function(req, res, next) {
+    var user = req.params.user
+    Menu.find({user : user}, function (err, post) {
+      if (err) return next(err);
+      res.json(post);
+    });
+    // console.log(req.params.title)
+  });
+
+router.delete('/:id', function(req, res, next) {
+    Menu.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+        if (err) return next(err);
+        res.send('borrado!')
+      
+    });
+  });
 
 module.exports = router;

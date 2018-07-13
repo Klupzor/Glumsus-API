@@ -13,7 +13,7 @@
         namePerson: String,
         phonePerson: Number,
         password: String,
-        businessId: [Schema.Types.ObjectId]
+        businessId: [{type: Schema.Types.ObjectId, ref: 'Business'}]
 
 
     })

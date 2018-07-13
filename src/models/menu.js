@@ -2,15 +2,7 @@
     var Schema = require('mongoose').Schema;
 
     var MenuSchema = Schema({
-        panel: {         //ciudad 
-            type: String,
-            required: true
-        },
-        cell: {         //categoria: res/bar/dis/ 
-            type: String,
-            required: true
-        },
-        user: {type: String, required: true},
+        user: String,
         cover: String,
         category: String,
         name: String,

@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcrypt')
 const Business = require('../models/business')
 const Person = require ('../models/person')
-const Menu = require('../models/menu')
 
 //   Create business and user .........................
  router.post('/', async (req, res) => {
