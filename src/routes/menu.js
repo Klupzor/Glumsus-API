@@ -2,6 +2,7 @@ const express = require ('express')
 const router = express.Router();
 const Menu = require('../models/menu')
 const Business = require('../models/business')
+const Person = require('../models/person')
 
 //creando item de menu adjunto al negocio que lo crea
 router.post('/:id', (req, res, next) => {
@@ -34,13 +35,18 @@ router.get('/', (req, res) => {
 
 router.get('/:user', function(req, res, next) {
     var user = req.params.user
-    Menu.find({user : user}, function (err, post) {
-      if (err) return next(err);
-      res.json(post);
-    });
+    // Business.find({user : user}, function (err, post) {
+    //   if (err) return next(err);
+    //   res.json(post);
+    // });
+    Person.findOne({user : user}).populate({path: 'businessId', populate: {path: 'menus'}}).exec(function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+    }) ;
     // console.log(req.params.title)
   });
 
+  //borrando con la id del menu
 router.delete('/:id', function(req, res, next) {
 
         // borrando la id del array menus del negocio

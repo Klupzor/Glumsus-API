@@ -2,7 +2,6 @@
     var Schema = require('mongoose').Schema;
 
     var MenuSchema = Schema({
-        user: String,
         cover: String,
         category: String,
         name: String,
