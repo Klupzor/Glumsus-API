@@ -15,7 +15,8 @@ var BusinessSchema = Schema({
     phone: Number,
     services: Boolean,
     cover: String,
-    created: { type: Date, default: Date.now }
+    created: { type: Date, default: Date.now },
+    menus: [{type: Schema.Types.ObjectId, ref: 'Menu'}]
 
 })
 
