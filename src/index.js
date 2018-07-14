@@ -10,6 +10,8 @@ const signupRoutes = require('./routes/signup')
 const loginRoutes = require('./routes/login')
 const userRoutes = require('./routes/user')
 const menuRoutes = require('./routes/menu')
+const menuCategRoutes = require('./routes/menuCateg')
+
 
 // settings 
 app.set('port', process.env.PORT || 3000)
@@ -28,6 +30,8 @@ app.use('/signup', signupRoutes)
 app.use('/login', loginRoutes)
 app.use('/user', userRoutes)
 app.use('/menu', menuRoutes)
+app.use('/menu/categ', menuCategRoutes)
+
 
 
 

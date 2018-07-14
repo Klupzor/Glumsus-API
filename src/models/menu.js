@@ -3,7 +3,6 @@
 
     var MenuSchema = Schema({
         cover: String,
-        category: String,
         name: String,
         description: String,
         price: String,

@@ -33,7 +33,7 @@ router.get('/business', (req, res)=>{
     // console.log(req)
     // res.json({datos: req.decoded})
     var user = req.decoded
-    Business.findOne({user : user}).populate('menus').exec(function(err, post){
+    Business.findOne({user : user}).populate({path: 'menuCategories', populate: {path: 'menus'}}).exec(function(err, post){
         if (err) return next(err);
       res.json({
           success: true,
