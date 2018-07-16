@@ -13,7 +13,7 @@ const Person = require ('../models/person')
 
     if(existPerson){
         return res.send({
-            succes: false,
+            success: false,
             message: 'Error: Usuario ya registrado'
         })
     }
@@ -23,7 +23,7 @@ const Person = require ('../models/person')
 
       if(existEmail){
           return res.send({
-              succes: false,
+              success: false,
               message: 'Error: Email ya registrado'
           })
       }
@@ -46,7 +46,7 @@ const Person = require ('../models/person')
 
       //Usuario registrado con exito
       return res.send ({
-          succes: true,
+          success: true,
           message: 'Usuario registrado!'
       })
 

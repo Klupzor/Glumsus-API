@@ -20,7 +20,10 @@ router.post('/:id', (req, res, next) => {
    MenuCategory.findByIdAndUpdate(req.params.id, {$push: {menus: carta._id}}, function (err, post) {
     if (err) return next(err);
 //   res.json(post);
-    res.send('Modificado!')
+    return res.send({
+        success: true,
+        message: 'Menu agregado !'
+    })
 
 });
 
