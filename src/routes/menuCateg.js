@@ -19,7 +19,10 @@ router.post('/:id', (req, res, next) => {
    Business.findByIdAndUpdate(req.params.id, {$push: {menuCategories: category._id}}, function (err, post) {
     if (err) return next(err);
 //   res.json(post);
-    res.send('Modificado!')
+    return res.send ({
+        success: true,
+        message: 'Categoria creada!'
+    })
 
 });
 
