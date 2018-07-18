@@ -53,10 +53,13 @@ router.delete('/:id', function(req, res, next) {
         // console.log('borrado!')
     })
 
-    //Borrando menu de la pase de datos
+    //Borrando menu de la base de datos
     Menu.findByIdAndRemove(req.params.id, req.body, function (err, post) {
         if (err) return next(err);
-        res.send('borrado!')
+        return res.send({
+            success: true,
+            message: 'Menu borrado !'
+        })
       
     });
   });

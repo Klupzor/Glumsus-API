@@ -12,11 +12,13 @@ var BusinessSchema = Schema({
         required: true
     },
     email: {type: String, lowercase: true},
-    phone: Number,
+    phone: String,
+    address: String,
     services: Boolean,
     cover: String,
     created: { type: Date, default: Date.now },
-    menuCategories: [{type: Schema.Types.ObjectId, ref: 'MenuCategory'}]
+    menuCategories: [{type: Schema.Types.ObjectId, ref: 'MenuCategory'}],
+    aboutUs: String
 
 })
 

@@ -55,7 +55,10 @@ router.delete('/:id', function(req, res, next) {
     //Borrando menu de la base de datos
     MenuCategory.findByIdAndRemove(req.params.id, req.body, function (err, post) {
         if (err) return next(err);
-        res.send('borrado!')
+        return res.send ({
+            success: true,
+            message: 'Categoria borrada!'
+        })
       
     });
   });
