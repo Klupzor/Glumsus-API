@@ -56,45 +56,19 @@ router.get('/person', (req, res)=>{
     });
 })
 
-// //   SAVE Business .........................
-// router.post('/', (req, res) => {
-//     let body = req.body
-
-//     Business.create(body, (err, task) => {
-//         if (err) return console.error(err) 
-//         // res.json(body)
-//         // res.send('guardado')
-//     })
-//     Person.create(body, (err, task) => {
-//         if (err){
-//             res.send(err.message)
-//             return console.error(err)
-//         } 
-//         // res.json(body)
-//         res.send('guardado')
-//     })
-
-// })
-
-// //   SAVE Business .........................
-// router.put('/:user', function(req, res, next) {
-//     var user = req.params.user
-//     Business.findOneAndUpdate({user : user}, req.body, function (err, post) {
-//         if (err) return next(err);
-//     //   res.json(post);
-//         res.send('Modificado!')
+router.put('/business/about', (req, res)=>{
+    // console.log(req)
+    // res.json({datos: req.decoded})
+    var user = req.decoded
+    Business.findOneAndUpdate({user : user}, req.body, function (err, post) {
+        if (err) return next(err);
+        res.json({
+            success: true,
+            message: "Modificado acerca de nosotros"
+          });
     
-//     });
-//   });
-
-//   router.get('/:title', function(req, res, next) {
-//     var title = req.params.title
-//     Business.findOne({user : title}, function (err, post) {
-//       if (err) return next(err);
-//       res.json(post);
-//     });
-//     // console.log(req.params.title)
-//   });
+    })
+})
 
 module.exports = router
 
