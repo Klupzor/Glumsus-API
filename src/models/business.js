@@ -19,7 +19,9 @@ var BusinessSchema = Schema({
     cover: String,
     created: { type: Date, default: Date.now },
     menuCategories: [{type: Schema.Types.ObjectId, ref: 'MenuCategory'}],
-    aboutUs: {type: String, default: "Editar descripción del negocio"}
+    aboutUs: {type: String, default: "Editar descripción del negocio"},
+    lat: Number,
+    lng: Number
 
 })
 
