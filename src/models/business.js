@@ -12,8 +12,9 @@ var BusinessSchema = Schema({
         required: true
     },
     email: {type: String, lowercase: true},
-    phone: String,
-    address: String,
+    phone: {type: String, default: ""},
+    address: {type: String, default: ""},
+    businessHours: {type: String, default: ""},
     services: Boolean,
     cover: String,
     created: { type: Date, default: Date.now },

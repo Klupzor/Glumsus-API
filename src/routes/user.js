@@ -57,14 +57,12 @@ router.get('/person', (req, res)=>{
 })
 
 router.put('/business/about', (req, res)=>{
-    // console.log(req)
-    // res.json({datos: req.decoded})
     var user = req.decoded
     Business.findOneAndUpdate({user : user}, req.body, function (err, post) {
         if (err) return next(err);
         res.json({
             success: true,
-            message: "Modificado acerca de nosotros"
+            message: "Modificada informacion del negocio"
           });
     
     })
